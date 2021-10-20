@@ -3,7 +3,7 @@
 set -e
 
 DOCKER_ID=pebabion
-IMAGE=python-workspace
+IMAGE=python-dev-container
 
 
 if [ $# -eq 0 ]
