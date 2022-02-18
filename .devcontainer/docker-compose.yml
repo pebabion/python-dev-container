@@ -5,13 +5,15 @@ services:
     build:
       context: ../docker
       dockerfile: Dockerfile
+      args:
+        - IMAGE=tensorflow/tensorflow
 
     init: true
     volumes:
       # Forwards the local Docker socket to the container.
       - /var/run/docker.sock:/var/run/docker-host.sock
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/workspace:cached
+      - ../workspace:/workspace:cached
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
